@@ -13,12 +13,12 @@ import javax.servlet.http.HttpSession;
 public class HandleWelcomeServlet extends HttpServlet{
 	
 	public void service(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
-		
+
 		HttpSession session = req.getSession();
 		String value = (String) session.getAttribute("usernamePass");
 		
-		PrintWriter writer = res.getWriter();
-		writer.println("Welcome " + value);
+		PrintWriter out = res.getWriter();
+		out.println("Welcome " + value);
 	}
-
+	
 }
